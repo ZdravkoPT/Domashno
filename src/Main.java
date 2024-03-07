@@ -4,36 +4,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // s obekti menu
+        Map<String, file> fileActions = fileManage.createFileActions();
+        menuChoice fileMenu = fileManage.createFileMenu(fileActions);
 
-        Map<String, Runnable> menu = new HashMap<>();
-
-        Scanner scanner = new Scanner(System.in);
-
-
-        menu.put("open", () -> System.out.println("Opening file"));
-        menu.put("save", () -> System.out.println("Saves the currently open file"));
-        menu.put("saveas ", () -> System.out.println("Saves the currently open file in <file>"));
-        menu.put("close ", () -> System.out.println("closes currently opened file"));
-        menu.put("help ", () -> System.out.println("Prints this information" + menu));
-        menu.put("exit", () -> System.out.println("Exists the program"));
-
-        System.out.print("Your choice is:");
-        String choice = scanner.next();
-        int selects = 100;
-        for (int numSelects = 0; numSelects < selects; numSelects++) {
-            if (menu.containsKey(choice)) {
-                menu.get(choice).run();
-            } else if (menu.containsKey(choice) && menu.containsKey("exit")) {
-                selects = numSelects;
-                break;
-            } else {
-                    System.out.println("Invalid choice. Please try again.");
-            }
-            choice = scanner.next();
-        }
-
-        System.out.println("You made "+selects + " selects in the app" );
+        Scanner input = new Scanner(System.in);
+        do {
+            System.out.print(":");
+            String userChoice = input.nextLine();
+            fileMenu.input(userChoice);
+        } while (true);
     }
 }
 
