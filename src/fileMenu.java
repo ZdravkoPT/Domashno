@@ -11,7 +11,7 @@ public class fileMenu implements menuChoice {
     public void input(String choice) {
         file fileAction = fileActions.get(choice);
         if (fileAction != null) {
-            System.out.println("Selected option: " + choice);
+            System.out.println("You selected   " + choice + "option!");
             fileAction.execute();
         } else {
             System.out.println("Invalid option. Please choose a valid option:");

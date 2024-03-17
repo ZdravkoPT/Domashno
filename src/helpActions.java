@@ -17,12 +17,12 @@ public class helpActions implements file {
             String command = entry.getKey();
 
             String description = switch (command) {
-                case "Open" -> "open <file>";
-                case "Close" -> "closes currently opened file";
-                case "Save" -> "saves the currently open file";
-                case "Save as" -> "saves the currently open file in <file>";
-                case "Help" -> "prints this information";
-                case "Exit" -> "exits the program";
+                case "Open" -> "Opening the <file>";
+                case "Close" -> "Closing currently opened file";
+                case "Save" -> "Saving the currently opened file";
+                case "Save as" -> "Saving the currently opened file in <file>";
+                case "Help" -> "Printing this information";
+                case "Exit" -> "Exiting the program";
                 default -> "";
             };
 
